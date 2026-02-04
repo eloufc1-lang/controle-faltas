@@ -124,11 +124,19 @@ const API = "SUA_URL_AQUI";
 let usuarios = [];
 let usuarioLogado = null;
 
+const btnLogin = document.getElementById("btnLogin");
+
 /* CARREGAR USUÁRIOS */
 fetch(API + "?acao=usuarios")
   .then(r => r.json())
-  .then(d => usuarios = d);
-
+  .then(d => {
+    usuarios = d;
+    btnLogin.disabled = false;
+    btnLogin.innerText = "Entrar";
+  })
+  .catch(() => {
+    alert("Erro ao carregar usuários");
+  });
 /* LOGIN */
 function login() {
   const u = usuario.value;
@@ -239,3 +247,4 @@ function criarUsuario() {
 
 </body>
 </html>
+
