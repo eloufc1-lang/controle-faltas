@@ -127,6 +127,12 @@ let usuarioLogado = null;
 const btnLogin = document.getElementById("btnLogin");
 
 /* CARREGAR USUÁRIOS */
+let usuarios = [];
+let usuarioLogado = null;
+
+const btnLogin = document.getElementById("btnLogin");
+
+/* CARREGAR USUÁRIOS */
 fetch(API + "?acao=usuarios")
   .then(r => r.json())
   .then(d => {
@@ -247,4 +253,5 @@ function criarUsuario() {
 
 </body>
 </html>
+
 
