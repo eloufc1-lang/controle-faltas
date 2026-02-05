@@ -119,6 +119,8 @@ th {
 </div>
 
 <script>
+  
+  /* CARREGAR USUÁRIOS */
 const API = "SUA_URL_AQUI";
 
 let usuarios = [];
@@ -126,13 +128,6 @@ let usuarioLogado = null;
 
 const btnLogin = document.getElementById("btnLogin");
 
-/* CARREGAR USUÁRIOS */
-let usuarios = [];
-let usuarioLogado = null;
-
-const btnLogin = document.getElementById("btnLogin");
-
-/* CARREGAR USUÁRIOS */
 fetch(API + "?acao=usuarios")
   .then(r => r.json())
   .then(d => {
@@ -253,5 +248,6 @@ function criarUsuario() {
 
 </body>
 </html>
+
 
 
